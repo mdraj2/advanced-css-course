@@ -1,8 +1,188 @@
-/*
-COLORS:
+/*--------------------------------------------------------------------*/
+/*In this section we will convert all the PX to REM*/
+/*--------------------------------------------------------------------*/
+/*Let us remove all the margins and paddings that are automatically adding on all elements using the universal selector*/
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  /*this will include the size of the content + plus any margin and */
+  box-sizing: inherit; }
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+html {
+  /*now one rem is exactly equal to 10 pixels*/
+  font-size: 62.5%; }
 
-*/
+/*something like font will be inherieted from here. So font will go here*/
+/*The font family will be inherieted by all the children of the body element*/
+/*Everything related to font goes in the body*/
+body {
+  /*if Lato is not present then choose sans-serif. You can use Lato because it was included in the html*/
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  /*this means that it is 1.7 times bigger than the previous defined line-height*/
+  line-height: 1.7;
+  color: #777777;
+  /*apply padding on the whole webpage*/
+  /*padding is not being inhereted */
+  padding: 3rem;
+  box-sizing: border-box; }
+
+.header {
+  /*vh means that the height of the header 95% of the view port height*/
+  height: 95vh;
+  /*if you are going to put a gradient or put a background on top of something always specify it in the same*/
+  /*We want the gradient to be on top here*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  /*cover will try to fit the background to all of the element is what i understood for now*/
+  background-size: cover;
+  /*this ensure that the top remains at the top regardless of the viewport*/
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+
+.logo-box {
+  /*Position absolute will be as close to the relative position which is the header in this case. The relative 
+	position is set in the header class*/
+  position: absolute;
+  /*Remember the percentage is with relation to the parent element*/
+  top: 4rem;
+  left: 4rem; }
+
+.logo {
+  /*The witdh will be automatically set by the browser as long as the height is set*/
+  height: 3.5rem; }
+
+.textbox {
+  position: absolute;
+  /*note that these values are relative to the header*/
+  /*using % will not work alone. You need to translate it */
+  top: 40%;
+  left: 50%;
+  /*The translate is in relation to the element itself not the parent element*/
+  /*the -50% is to the left and the top respectively*/
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+
+/*We will make block elements because they will occupy the entire witdh and they create line breaks*/
+.heading-primary-main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  /*These are other properties that we can work on*/
+  /*animation-delay: 3s which stop the animation from immediateley happening*/
+  /*animation-iterationCount: 3 will cause the animation to occur 3 times in this case*/
+  /*this will control the time of the animation. e.g should it speed up or slow down*/
+  animation-timing-function: ease-out; }
+
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation: moveInRight 1s ease-out; }
+
+@keyframes moveInLeft {
+  0% {
+    /*invisible when it moves in*/
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    /*apparently browsers are optmised for only two animation propertys. Opacity and the transform property*/
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    /*invisible when it moves in*/
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    /*apparently browsers are optmised for only two animation propertys. Opacity and the transform property*/
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    /*invisible when it moves in*/
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    /*apparently browsers are optmised for only two animation propertys. Opacity and the transform property*/
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*we use : for sudo selectors. They activate the css file under special conditions*/
+/*This is the link state. But there is another which is when the user has clicked on the button which is the visited state*/
+/*normally the link state is blue at the begining but turns purple after the visited state.*/
+/*We wan the visted and linked state in this case to be the same so we put them together*/
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  /*the a tag behave like an inline element. We need to change to block element*/
+  display: inline-block;
+  /*so how do I center this? The transform is one way to do it. 
+	but it turns out that we can just center all the text in the logo box and it should work fine*/
+  border-radius: 10rem;
+  /*What this means is that the effects of hover and active will be applied with active and hover*/
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem; }
+
+.btn-white {
+  background-color: white;
+  color: #777; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  /*this means that we dont want any shadow in the x direction. We need 10px in the ydirection with 20px burr*/
+  /*basically the shape of the shadow will we translated in the downwards direction*/
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn:active {
+  /*This is with relation to the initial state*/
+  /*this looks like it is being pushed downwards because the hover has displaced 3px up but brought back to 1px
+	when clicked*/
+  transform: translateY(-0.1rem);
+  /*when clicked we want it to look less blurred and the shadow should be closer to the button*/
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn::after {
+  /*you must specify the content*/
+  /*basically we are adding content after the words. but we are trying to duplicate an item that looks like a button*/
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  /*since it is absolute it will look for the first element with postion of relative. That will be the*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s; }
+
+.btn-white::after {
+  background-color: white; }
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; }
+
+.btn-animated {
+  animation: moveInBottom .5s 0.75s ease-out;
+  animation-fill-mode: backwards; }
