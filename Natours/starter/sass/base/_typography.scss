@@ -1,0 +1,41 @@
+.heading-primary{
+	color: $color-white;
+	text-transform: uppercase;
+	backface-visibility: hidden;
+	margin-bottom: 6rem;
+
+	&--main{
+	display: block;
+	font-size: 6rem;
+	font-weight: 400;
+	letter-spacing: 3.5rem;
+	animation-name: moveInLeft;
+	animation-duration: 1s;
+	/*These are other properties that we can work on*/
+	/*animation-delay: 3s which stop the animation from immediateley happening*/
+	/*animation-iterationCount: 3 will cause the animation to occur 3 times in this case*/
+	/*this will control the time of the animation. e.g should it speed up or slow down*/
+	animation-timing-function: ease-out;
+	}
+
+	&--sub{
+	display: block;
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 1.75rem;
+	animation: moveInRight 1s ease-out;
+	}
+}
+
+body {
+	/*if Lato is not present then choose sans-serif. You can use Lato because it was included in the html*/
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	/*font-size: 16px;*/
+	/*this means that it is 1.7 times bigger than the previous defined line-height*/
+	line-height: 1.7;
+	color: #777777;
+	/*apply padding on the whole webpage*/
+	/*padding is not being inhereted */
+	padding: 3rem;
+}

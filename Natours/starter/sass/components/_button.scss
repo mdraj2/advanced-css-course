@@ -1,0 +1,68 @@
+.btn {
+	&:link,&:visited {
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		/*the a tag behave like an inline element. We need to change to block element*/
+		display: inline-block;
+		/*so how do I center this? The transform is one way to do it. 
+		but it turns out that we can just center all the text in the logo box and it should work fine*/
+		border-radius: 10rem;
+		/*What this means is that the effects of hover and active will be applied with active and hover*/
+		
+		transition: all .2s;
+		position: relative;
+		font-size: 1.6rem;
+	}
+
+	&--white {
+		background-color: $color-white;
+		color: $color-grey-dark;
+		&::after {
+			background-color: $color-white;
+		}
+	}
+
+	&:hover {
+		transform: translateY(-.3rem);
+		/*this means that we dont want any shadow in the x direction. We need 10px in the ydirection with 20px burr*/
+		/*basically the shape of the shadow will we translated in the downwards direction*/
+		box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+		&::after {
+		transform: scaleX(1.4) scaleY(1.6);
+		opacity: 0;
+		}
+
+	}
+
+	&:active {
+	/*This is with relation to the initial state*/
+	/*this looks like it is being pushed downwards because the hover has displaced 3px up but brought back to 1px
+	when clicked*/
+	transform: translateY(-.1rem);
+	/*when clicked we want it to look less blurred and the shadow should be closer to the button*/
+	box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
+	}
+
+	&::after {
+		/*you must specify the content*/
+		/*basically we are adding content after the words. but we are trying to duplicate an item that looks like a button*/
+		content: "";
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		border-radius: 100px;
+		/*since it is absolute it will look for the first element with postion of relative. That will be the*/
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transition: all 0.4s;
+	}
+
+	&--animated {
+		animation: moveInBottom .5s 0.75s ease-out;
+		animation-fill-mode: backwards;
+	}
+
+}

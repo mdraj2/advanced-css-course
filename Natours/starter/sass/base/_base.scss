@@ -1,0 +1,24 @@
+/*--------------------------------------------------------------------*/
+/*In this section we will convert all the PX to REM*/
+/*--------------------------------------------------------------------*/
+
+
+/*Let us remove all the margins and paddings that are automatically adding on all elements using the universal selector*/
+*, *::after,*::before {
+	margin: 0;
+	padding: 0;
+	/*this will include the size of the content + plus any margin and */
+	box-sizing: inherit;
+}
+
+html {
+	/*now one rem is exactly equal to 10 pixels*/
+	font-size: 62.5%;
+}
+
+/*something like font will be inherieted from here. So font will go here*/
+/*The font family will be inherieted by all the children of the body element*/
+/*Everything related to font goes in the body*/
+body {
+	box-sizing: border-box;
+}

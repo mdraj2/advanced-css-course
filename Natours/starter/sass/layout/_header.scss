@@ -1,0 +1,44 @@
+.header {
+	/*vh means that the height of the header 95% of the view port height*/
+	height: 95vh;
+	/*if you are going to put a gradient or put a background on top of something always specify it in the same*/
+	/*We want the gradient to be on top here*/
+	background-image: linear-gradient(to right bottom,
+		rgba($color-primary-light,0.8),
+		rgba($color-primary-dark,0.8)),
+		url("../img/hero.jpg");
+	/*cover will try to fit the background to all of the element is what i understood for now*/
+	background-size: cover;
+	/*this ensure that the top remains at the top regardless of the viewport*/
+	background-position: top;
+	position: relative;
+
+	clip-path: polygon(0 0,100% 0, 100% 75vh, 0 100%);
+
+	&__logo-box {
+	/*Position absolute will be as close to the relative position which is the header in this case. The relative 
+	position is set in the header class*/
+	position: absolute;
+	/*Remember the percentage is with relation to the parent element*/
+	top: 4rem;
+	left: 4rem;
+	}
+
+	&__logo {
+	/*The witdh will be automatically set by the browser as long as the height is set*/
+	height: 3.5rem;
+	}
+
+	&__textbox {
+	position: absolute;
+	/*note that these values are relative to the header*/
+	/*using % will not work alone. You need to translate it */
+	top: 40%;
+	left: 50%;
+	/*The translate is in relation to the element itself not the parent element*/
+	/*the -50% is to the left and the top respectively*/
+	transform: translate(-50%,-50%);
+	text-align: center;
+	}
+
+}
