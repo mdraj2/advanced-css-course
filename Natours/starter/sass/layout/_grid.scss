@@ -1,0 +1,63 @@
+.row {
+	// we need to define the width of the row. My question is why cant i use the view port height?
+	// lets use rems and 1140px is a commonly used number
+	// use max width if there is not enough space for 1140px
+	// basically once 1140 px is reached the padding will be added to the box
+	max-width: $grid-width;
+	background-color: $color-grid;
+	// we are going to center the row using this trick. 0 margin top and equal both sides margin
+	margin: 0 auto;
+
+	// we choose everything except the last one
+
+	&:not(:last-child) {
+		margin-bottom: $gutter-vertical;
+	}
+
+	.col-1-of-2 {
+		// with calc we can mix units becausse this will happen when all the values are calculated.
+		// 100% means of 100X of parent element. Which is row width
+		width: calc(( 100% - #{$gutter-horizontal})/2);
+	}
+
+	.col-1-of-3 {
+		// with calc we can mix units becausse this will happen when all the values are calculated.
+		// 100% means of 100X of parent element. Which is row width
+		width: calc(( 100% - #{$gutter-horizontal*2})/3);
+	}
+
+	.col-2-of-3 {
+		// with calc we can mix units becausse this will happen when all the values are calculated.
+		// 100% means of 100X of parent element. Which is row width
+		width: calc(2*( 100% - #{$gutter-horizontal*2})/3 + #{$gutter-horizontal});
+	}
+
+	.col-1-of-4 {
+		// with calc we can mix units becausse this will happen when all the values are calculated.
+		// 100% means of 100X of parent element. Which is row width
+		width: calc(( 100% - #{$gutter-horizontal*3})/4);
+	}
+
+	.col-2-of-4 {
+		// with calc we can mix units becausse this will happen when all the values are calculated.
+		// 100% means of 100X of parent element. Which is row width
+		width: calc(( 100% - #{$gutter-horizontal*3})/2 + #{$gutter-horizontal});
+	}
+
+	.col-3-of-4 {
+		// with calc we can mix units becausse this will happen when all the values are calculated.
+		// 100% means of 100X of parent element. Which is row width
+		width: calc(#{$gutter-horizontal*2} + 3*( 100% - #{$gutter-horizontal*3})/4);
+	}
+
+	[class^= "col-"] {
+		background-color: orange;
+		&:not(:last-child) {
+			margin-right:$gutter-horizontal;
+		}
+		float: left;
+
+	}
+
+	@include clearfix;
+}
