@@ -4,7 +4,7 @@
 	// use max width if there is not enough space for 1140px
 	// basically once 1140 px is reached the padding will be added to the box
 	max-width: $grid-width;
-	background-color: $color-grid;
+	// background-color: $color-grid;
 	// we are going to center the row using this trick. 0 margin top and equal both sides margin
 	margin: 0 auto;
 
@@ -51,7 +51,7 @@
 	}
 
 	[class^= "col-"] {
-		background-color: orange;
+		
 		&:not(:last-child) {
 			margin-right:$gutter-horizontal;
 		}
