@@ -1,0 +1,45 @@
+.composition {
+	position: relative;
+	&__photo {
+		// of parent element which is div class of col-1-of-2
+		position: absolute;
+		width: 55%;
+		box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+		border-radius: 2px;
+		z-index: 5;
+		outline-offset: 2rem;
+
+		// important note that the hover does not need to be applied to the photoes itself
+		/*Why? because we are repeating code*/
+		transition: all 0.4s;
+		&:hover{
+				// you the scale property to make something more bigger
+			transform: scale(1.05) translateY(-.5rem);
+			// make more darker and the shadow move in the y direction aswell
+			box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+			outline: 1.5rem solid $color-primary;
+			z-index:10;
+		}
+
+		
+		&--p1{
+			left:0;
+			top: -2rem;
+		}
+		
+		&--p2{
+			right: 0;
+			top:  2rem;
+			
+		}
+		&--p3{
+			left: 20%;
+			top:  10rem;
+		}
+
+	}
+
+	&:hover &__photo:not(:hover){
+		transform: scale(0.95);
+	}
+}
