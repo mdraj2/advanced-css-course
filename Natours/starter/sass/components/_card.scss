@@ -1,0 +1,69 @@
+.card{
+	// Functionality
+	perspective: 100rem; /* Safari 4-8 */
+	
+	position: relative;
+	height: 52rem;
+
+	&__side {
+		border-radius: 2rem;
+		box-shadow: 0 1.5rem 4rem rgba($color-black,0.15);
+		height: 52rem;
+		transition: all 0.8s ease;
+		font-size:2rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+
+		backface-visibility: hidden;
+
+		&--front {
+		background-color: $color-white;
+		
+		}
+
+		&--back {
+		transform: rotateY(-180deg);
+			&-1 {
+				background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark)
+			}
+		}
+	}
+	// the reason we set up like this is because the card element will remain in place
+	// the thing that rotates is the __side class. Hence as long as we are within the border of
+	// the card box the transition will occur and the class &__side will be added.
+	&:hover &__side--front{
+		transform: rotateY(180deg);
+	}
+
+	&:hover &__side--back{
+		transform: rotateY(0deg);
+	}
+
+// Font side styling
+	&__picture {
+
+		height: 23rem;
+		background-size: cover;
+		background-blend-mode: screen;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		&--1 {
+			// this will be written in the css file so we need to move up one folder
+			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+			url("../img/nat-5.jpg");
+		}
+
+		&--2 {
+			// this will be written in the css file so we need to move up one folder
+			background-image: url(../img/nat-5.jpg);
+		}
+		&--3 {
+			// this will be written in the css file so we need to move up one folder
+			background-image: url(../img/nat-5.jpg);
+		}
+
+	}
+}
