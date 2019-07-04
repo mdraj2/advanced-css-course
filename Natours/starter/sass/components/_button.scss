@@ -23,6 +23,14 @@
 		}
 	}
 
+	&--green {
+		background-color: $color-primary;
+		color: $color-white;
+		&::after {
+			background-color: $color-primary;
+		}
+	}
+
 	&:hover {
 		transform: translateY(-.3rem);
 		/*this means that we dont want any shadow in the x direction. We need 10px in the ydirection with 20px burr*/
