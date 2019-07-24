@@ -1,0 +1,32 @@
+43/
+
+Building the story picture blurrs and text shows again
+
+Use figurecaption element to add more information to the figure element.
+
+the shape class in the story scss was set to position equal to relative. We want to position the caption with respect to
+the shape class. For the caption class position is absolute and set in the middle.
+
+But the text will not be centered and for this we use the transform:translate property. When using the % for translate
+we are taking into account the element itself. So -50,-50 will center the element usually after a position absolute.
+
+We center the text in the element and increase the size. Also we make it not visible
+at the begining by setting the opacity to 0.
+
+Now we add a pseudoclass which will listen to hovering. We make the opacity of the 
+text go from 0 to 1 on hovering. Note that by chaining the sectors such as 
+&:hover &__caption, we say that when hover is true apply the following to the 
+caption class.
+
+transition was used to animate the effects. 
+
+backface-visibility: hidden; was added to prevent pixel jumps
+transform:translateX(-3rem) scale(1.0); was added to zoom out of the 
+original picture. 
+Animation was added to the caption as well as the img
+
+Filters were added. The blur and brightness. just like the trasform 
+they two filters were stacked in one line.
+
+HTML for Mary was duplicated for Jack wilson. At the end a button for class
+btn-text which was made earlier was added.&rarr; was used to make inline right arrow in html 
