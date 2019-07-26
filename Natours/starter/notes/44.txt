@@ -1,0 +1,36 @@
+44/
+
+We add the video to the background
+
+We make an element that take up the witdh of the section
+
+We use the video element to embed the video.
+
+We dont use the src attribute instead we use the source element
+
+We have two source elements and one is for mp4 and the other is for webm
+
+We used coverr.co to get the background
+
+If the videos cannot be played then the text I wrote "Your browser is not support will show"
+
+We added options to the video. Two were autoplay and muted and loop.
+
+We made a bg-video scss file incase we will have more than one video in the page.
+
+We set the position of the video to absolute and position on the top left. We give the 
+height and witdh of the parent container which is section stories.
+
+We set the video element with a z-index of -1 and remove the grey background. Otherwise the 
+video will not show
+
+We want to make the background of the story element (e.g the container with the names) to become slighly lighter
+So we use the background property. If we use opacity it will change make the word even transparent. We use
+background-color: rgba($color-white,.6); on the story element and make it opacity equal to 60%.
+
+Now we want to make the video fit into the section. That is the video must have the same dimension as the 
+bg-video. But know this that aspect ratio must be maintained. This will not be true however. We need to use 
+object fit. This will help maintain the aspect ratio while covering the entire parent element and the parts 
+that do not fit will be clipped off. You would use cover as I did here, but other options such as fill could be used as 
+well but the aspect ratio will not be maintained. Cover will fit from top to bottom and clip the extra. Overflow was added 
+in case the the video overflows from the parent element
