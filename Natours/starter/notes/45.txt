@@ -1,0 +1,31 @@
+45/
+
+we made a section to contain the form. There will be a lot of css involved in this project 
+The form will be a reusable piece of component so make a scss file for that. So we want to 
+extract things like the name email address and radio buttons into the scss file
+
+we add padding to the section-book and add the background color skin. Why would we use padding 
+is there a better way to do this??
+
+We move up one level and add now make the book section. We added the URl and set to background size to cover.
+Note that without any content the background image will not show. 
+Next we added the shadow. Look at the documentation for the parameters. 
+
+We are trying to achieve a slanted background with two different colors. So we use
+the gradient method to achieve this. 
+
+background-image: linear-gradient(60deg, rgba($color-white,0.9) 0%, rgba($color-white,0.9) 49.9%,transparent 50%),url(../img/nat-10.jpg);
+
+we have two backgrounds.The linear gradient is on top
+and color fades from white to transparent. We say that we want white from 0 to 50% and 
+orange from 50% and greater
+
+All of the styling was applied to the section-book so far
+
+Next book__form was defined and contains all the form stuff. It has a witdh of 50%
+and a padding of 6rem. 
+This makes sense because we want to have content on the side of the total div containing book class
+
+
+Next, we make a form element. there are three div tags nested and each has a class of form group
+we use the for keyword to link an input. Note that label and input go together
