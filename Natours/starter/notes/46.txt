@@ -1,0 +1,67 @@
+46/
+
+a new form scss file was made and the element were modified. 
+
+You can modify the input area by modifying selecting the class name.
+The padding on the containing the letter such as 
+Full name a padding on the top,bottom and on the side. 
+The side is given a bit more. This is for visual effects
+i suppose. You will see some indentation.
+
+
+we gave the input a background color of white and some opacity of 50%
+we made the border radis of 2px and removed the border
+
+Note that the font is different inside the input element. Generally in the begining it is not 
+set to inherit by deafult so we need to change that.
+We use the font-family inherit to change that in the scss file.
+
+So now we want to have some space between the two inputs. The div that houses the input needs to be
+separated. we need to add marign. But we dont want to add margin to the last hence we need to choose
+all except the last one. We use the not pseudoclass and pass in the :lastchild
+
+We need to remove the outline so we use the focus pseudoclass to remove it. Set outline to none.
+We need to show interativity however, so if one one is navigating with tab we want them to know that
+they are in the the field. We set some shadow using box shadow and put some color in the border bottom
+when we focus.
+
+we add 
+border-bottom: 3px solid transparent;
+to the normal form because otherwise it will shiftdownwands when we focus on the field
+
+We now want to change the color of the placeholder for that we use a pseudoclass 
+&::-webkit-input-placeholder and make a new color grey.
+
+We changed the witdh to occupy 90% of the witdh and set display to block to force the label downwards
+
+At this stage we want to change the color when the form is validated or not.
+
+now then when do we want it to look red when invalid? we want it to be invalid when it is focused but invalid.
+So &:focused:invalid will do the trick. 
+
+We want to get some animation going on the label element. This is tricky because we want the website to know when 
+the placeholder is not empty and then apply the styling to the label element. This is without using javascript 
+so it is tough.
+
+https://css-tricks.com/multiple-class-id-selectors/. gives a good example of using spaces for css selectors. It is
+called the Descendant combinator. Basically if you use spaces for css then you access the descendants.
+
+So the question is if placeholder is shown we want to do some styling on the label element. That is we want it 
+to be invisible. The question is how to select. &__input:placeholder-shown * &__label. * is the adjacent sibling 
+selector. 
+
+We set opacity to 0 and set visiblity to hidden. The reason we have both is because we cannot animate the visibility.
+
+&__input:placeholder-shown + &__label {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+will disable when we type and the written css for 
+&__label will activate and animate all of them. 
+
+It should be noted that no styling will remain fixed as you disable. it is set to default when the selector no longer
+applies
+
+I put 4 rem because that is approximately where the placeholder is relative to the activated
+
