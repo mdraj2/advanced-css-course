@@ -1,0 +1,73 @@
+/47
+
+transition was added as that it the transition from orange to green is smooth in the form group
+
+Next we need to add radio buttons. We make another form group.
+we use the name attibute to the browser that we are dealing with choices. We give name of size. The for attribute in the 
+label conencts to the id in the label.
+
+Note that it is not possible to style radio buttons. So we must build our own buttons.
+Basically we style with a span element will be the new button and hide it with our span element.
+Labels tell the browser that everything contained within should be treated as one element 
+(in terms of text. They are not divs). For example take the following code
+
+<input type="radio" name = "size" class="form__radio-input" id = "large">
+<label for="large" class="form__radio-label">
+	<span class="form__radio-button"></span>
+	Large tour group
+</label>
+
+Basically everything inside the label is treated as a part of the input with id large.
+
+If could click the span or the words to activate the radio button. That means that we could hide the 
+dull button and make our own styled button which is clickable.
+
+We set the dull radio buttons to witdh of 49% and display inline to get them to asign side by side
+
+We give a cursor of pointer to get it to point
+
+The following Css was added to get a hollow green circle
+
+		height: 3rem;
+		width: 3rem;
+		border: 5px solid $color-primary;
+		border-radius: 50%; 
+		display: block;
+
+We position the circle absolute and relative to the label element. 
+
+Now we want the inner circle to show. For this we will use the after pseudo element (why the after??)
+
+Note how the position is done. Althought we have not said that radio-button is relative (we said absoute) the ::after
+knows that it is postioned relative to the radio-button class. We move the small circle to the center using the
+top 50% left 50% but need to translate by 50% ,-50% to get it back to the center.
+
+The logic to make the small circle turn on or off is given by the following css
+
+&__radio-input:checked ~ &__radio-label > &__radio-button::after{
+			opacity: 1;
+}
+
+It is read from left to right and cascades downwards
+
+We hide the radio button so that it does not show
+
+We need to add a button to submit the form. The browser knows this automatically
+
+Basically, we need to change the border to none and cursor to pointer because at the moment it looks horrid.
+With an <a> tag it would look different but as mentioed befor it is not possible for form submission. 
+The button does not have a link or visited class so it :link and :visted which was applied before will not apply. We
+need to make them on the outside. To do this in scss we simply append &. For example, the following will appear correctly 
+with the fix, but it wont for the button element.
+
+<a href="https://www.w3schools.com" class="btn btn--green">Visit W3Schools.com!</a> (will show correctly)
+button will show correct after adding & to the scss file
+
+The outline which shows up when the button is active is removed 
+
+For utility class remember to use the !important keyword because they will be overwritten by the normal classes which
+have more presedence naturally
+
+
+
+

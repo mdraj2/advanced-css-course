@@ -1,5 +1,5 @@
 .btn {
-	&:link,&:visited {
+	&,&:link,&:visited {
 		text-transform: uppercase;
 		text-decoration: none;
 		padding: 1.5rem 4rem;
@@ -13,6 +13,9 @@
 		transition: all .2s;
 		position: relative;
 		font-size: $default-font-size;
+		// change for the <button> element
+		border: none;
+		cursor: pointer;
 	}
 
 	&--white {
@@ -43,13 +46,15 @@
 
 	}
 
-	&:active {
+	&:active,&:focus {
 	/*This is with relation to the initial state*/
 	/*this looks like it is being pushed downwards because the hover has displaced 3px up but brought back to 1px
 	when clicked*/
 	transform: translateY(-.1rem);
 	/*when clicked we want it to look less blurred and the shadow should be closer to the button*/
 	box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
+	// outline removed
+	outline:none;
 	}
 
 	&::after {
