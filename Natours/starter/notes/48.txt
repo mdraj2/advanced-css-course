@@ -1,0 +1,63 @@
+/48
+
+Because we are using the BEM notation we want to give the element with class name of footer with a 
+class of footer. We give a padding of 10 rem on the top and the bottom and 0 on the left and right. This is 
+to get the background color of grey dark. We give a font size of 1.4rem and color of grey light. The color and 
+font size will be inherited by the children.
+
+
+We link the logo png image using the source tag and give it a class name of footer__logo. Note that
+this class inside the div with class of footer__logo-box. The give the class of logo box with text-align of center and 
+margin bottom of 8 rem. Note that the image is an inline elements behave like text so it can be centered with 
+text-align. We give the log so size 15rem and the height is auto. The difference between height auto and height 100% is 
+that height auto will be based on the height on the children. e.g 
+
+<div style="height:50px">
+    <div id="innerDiv" style="height:auto">
+          <div id="evenInner" style="height:10px">
+          </div>
+    </div>
+</div>
+
+now the #innerDiv is going to have height:10px
+
+In this case we are trying to maintain the aspect ratio of the image.
+
+Next we need a row with two columns to house the additional links like company and contact us, careers and privacy policy
+and another for the copywright stuff.
+
+For the first column you have the navigation class and houses an unordered list of the following stuff like company
+privacy policy. The unorder list is given a class of footer__list and the li tags given footer__items and the anchor
+tags given footer__link. 
+
+The navigation class is given a border top of 1px that looks white and we give some padding on the top to move 
+the content in the navigation class downwards. This is so that there is some distance between them.
+
+Next we give a display of inline-block. Remember that the rows populated with content will take up the entire
+block. The is padding in all the columns except the last one. The white border on top will extend more than it is 
+required so we will set it to inline block. Now the column's content size does not change but the size occupied 
+the navigation is changed to minimise the amount as much as possible. This means the line stop after the last
+content of "terms".
+
+We give a the list items of style none to remove everything.
+
+Naturally, the list items are block items. So then inorder to get them to stack next to each other we need to 
+get them to become inline-block. And we give them space by specfying margin right of 1.5rem but dont apply to the 
+last element. 
+
+&:not(:last-child) {
+	margin-right: 1.5rem;
+}
+
+We next make the links animate. All these links have the class of footer_link. We need to apply these to visted and 
+link. All links will have a color of light grey and we remove the underlines by removing text-decorations. Make them 
+upper case and display inline (not sure if we need to specfiy this twice, i think they are inline blocks ( the <a> tag).
+When we hover and active them we give it a primary color and do some other effects.
+
+finally we maek the copy right section. We give the same border and the the padding on top like the navigation
+. But the difference is that we give 80% width and float it to the right. The problem is that content takes up the 
+whole column div. So the idea is that we make it smaller width, the inside. This will make the white line less pronouned
+and finally we float it to the right of the parent container. This is to get the illusion of symetry along the logo.
+
+
+Next we make the white line on top of the contact us stuff
