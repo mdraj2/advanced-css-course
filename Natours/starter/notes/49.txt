@@ -1,0 +1,51 @@
+/49
+
+The following HMTL was added
+
+<div class="navigation">
+    		<input type="checkbox" class="navigation__checkbox" id = "navi-toggle">
+    		<label for="navi-toggle" class="navigation__button">MENU</label>
+			<div class="navigation__background">&nbsp;</div>
+			<nav class="navigation__nav">
+				<ul class="navigation__list">
+					<li class="nagivation__item"><a href="#" class="nagivation__link">About Natours</a></li>
+					<li class="nagivation__item"><a href="#" class="nagivation__link">Your benefits</a></li>
+					<li class="nagivation__item"><a href="#" class="nagivation__link">Popular tours</a></li>
+					<li class="nagivation__item"><a href="#" class="nagivation__link">Stories</a></li>
+					<li class="nagivation__item"><a href="#" class="nagivation__link">Book now</a></li>
+				</ul>
+			</nav>
+    	</div>
+
+Basically we want to make a navbar. The idea is we want to have a checkbox that will activate cause the green background show when the circle with the
+hamburger is clicked. We hide the checkbox the same way we did with radio buttons. We give the class navigation__checkbox with a display of none. We 
+attach the input tag containing type checkbox with the label tag of navigation__button. For now we insert the word "MENU" so that it shows up on the screen.
+We give a background color of white and set the height and witdh of 7 rem. the border radius of 50% will cause the square to become a circle.
+We give a position of fixed so that the circle will remain in the same position as we scroll. Next we position it with top of 6 rem and right 6 rem.
+The right positioning attribute will cause it to show up on the right hand side of the page. The z index will cause the button to remain on page as we scroll 
+downwards. 
+
+We make a nagivation background and we put &nbsp;. I think we dont need to put but for the sake of nothing we put it. This div is the background and 
+has a class of navigation__button. The background need to be a circled version of the white circle, but we want it to show underneath. So we give 
+a z-index of 100. We next give it a height and witdh of 6rem a border radius of 50% and top and right of 6.5rem. We a background image of radial gradient.
+Next we scale it by 80% to make it cover the entire screen. Note that we want this colored circle to be smaller than the white circle because we want it 
+to animate when we scale it by 80%.
+
+Now for the nav element. We give the nav element the 100vh for height and 100% for witdh. This will make the navigation tag cover the entire page. You give it a
+position of fixed and position it at the top right. This will take the element out of normal document flow. We dont want the nav page to occupy scroll page. 
+
+We give the list postion absolute. It will know that it is relative to the __nav class. and to center it we use the transform translate property and remove the
+list style. We also center the text.
+
+Between each item we give a margin of 1rem
+
+For the link tags we display them as inline block. This is important because otherwise the css will not be applied the way we want and the transform properties
+will not work on the list items. The list items default is display:list-item. We need to override that to inline block.
+
+background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+background-size: 250%;
+
+Basically we make the background 250% bigger and then on hover we bring it back to middle which shows the white portion of the background
+
+
+
