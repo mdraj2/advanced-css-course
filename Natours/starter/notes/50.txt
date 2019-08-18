@@ -1,0 +1,11 @@
+We want to hide the background and the navigation so we dont want it to show up when we are opening the page.
+I added some shadow on the box so use the box shadow property. 
+We want to hide the navigation page. To do so we want set the witdh to 0 and set the opacity to 0. But this did not collapse the content properly.
+MAybe there is another way to do it. I found out that opacity will make it none showable, but visiblity will turn off
+the click events. So use both together. The opacity is used because it will be animated as the transition occurs and finally,
+the element will be set to visibility of hidden. If you dont do this this until the animation is done 
+the state of visibility will remove after the check box is clicked.
+
+We learned about the cubic-benizie function that is just another way for defining the easing animation. 
+
+I used the selector to change the opacity and the width of the nav to center the content
