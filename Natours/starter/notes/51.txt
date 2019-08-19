@@ -1,0 +1,33 @@
+The hamburger sign was made in the tutorial. The three bars were made using one span element. The label tag is the white button. Inside the label tag we what a span element.
+The span element has a class of navigation__icon. Since we need three items we can use the same span element and use the pseudoelements. We give the element a witdh of 3 rem and 
+heigth of 2px and make the color of the background black. This give the illusion of a line. We give the navigation__icon a margin-top of 3.5rem to center it. We give the display for each a display of inline-block.
+This is because we can center it with textalign propety if we used inline-block. Note that the display same display property is applied to all the pseudoelements. We use position abosulte to position 
+the the before and after (rememeber that content:"" must be shown). We give a left of 0 and add the transitions. Then we position the before with top of -.08rem realtive to the parent element and after iwth 0.8rem.
+
+&__button:hover &__icon::before {
+		top: -1rem;
+	}
+
+	&__button:hover &__icon::after {
+		top: 1rem;
+	}
+
+is usedto expand the bottom and top bar. 
+
+Note that we made the curosor on the button property to pointer.
+
+Now we try to make the X show up.
+Since this happens when we clicks the white element we want to do the checkbox hackagain.
+
+The selector is  &__checkbox:checked + &__button &__icon
+This selector will select the brother of checkbox class of button and then select the icon class of the button.
+Now we are going to hide it. The reason we hide it is because for a X we only need two lines. The two lines will be the before and after.
+
+The __checkbox:checked + &__button &__icon::before  and __checkbox:checked + &__button &__icon::after are selected. The top is made 0 and 
+the lines are rotated(45degs). The bottom is top 0 and the transform is rotated (-45).
+
+Generally when the rotation happens it happens on the center. You can change this with rotate origin.
+
+
+
+
