@@ -1,0 +1,30 @@
+in this section the popup was made. The popup class has a background of transparent black and position of fixed
+as we want it to remain as we scroll downwards. We align it on the top left. Notge that we had to increase
+the z index. The content is the white rectangle. Oddly we dont have t he height specfied. We will let it
+dynamically increase in size as we add content. We give it position of absolute and and center it using translate
+propeties. We set the display to table and set overflow to hidden. if not hidden the image will overflow into the outside
+because of the border radius of 3px. 
+
+We divide up the content into left and right divs. The left will be witdh of 33.333% and display property of 
+table-cell.The img class is inside the left class. We set the class on the images as display block and the 
+witdh as 100% (of parent element which is the left class). 
+
+On the right hand side the witdh is 66.6667% and is also a table cell. This is the reason we used table cell. We
+wanted to align the content on the right hand side in the middle. it is an easy and effective way to do it.
+we add some padding on the on top,bottom and left,right to give some room for the content.
+
+Finally we make the font-size of 1.4 and add some margin on the bottom of the text to give space for between it and
+the button.
+
+We also added some utility classes on h2 and h3 tags.
+
+now we want to have two different columns for the text. We want to divide up the text and we do this by 
+specifying the column-count property and the column gap. The column count is the number of columns
+and the column gap is the gap between them and trhe column rule is the verticle line that seperates the columns
+we give it a color of grey-dark.
+
+We put hyphens auto for the system to automatically figure out where to put the hypens. For the hypens to work
+correctly you need to specify the language property on the top of the page.
+
+you need to add prefixs for the hypens property because it is not supported in all browsers. But note that there
+are tools that do this for you 
