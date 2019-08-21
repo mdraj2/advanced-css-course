@@ -1,0 +1,115 @@
+In this lecture we used the @content directive and the @if directives.
+
+noobs make a big media query such as below. And we would copy this code to each of the different breakpoints.
+
+@media(max-width: 600px) {
+	html {}
+	body {}
+}
+
+A better way is to add the media query to our selector. And we can do that with Sass. 
+
+For example the following is possible with Sass.
+
+@media(max-width: 600px) {
+	width: 50%;
+}
+
+but this method is not a good way either. Because what if you need to change something in this? You will have to change 
+it everywhere.
+
+So in this case we will use a mixin.
+
+Lets start with a simple mixin in the mixin file
+
+@mixin respond-phone {
+	@media(max-width: 600px) { @content }
+}
+
+The @content is the content directive and allows us to pass a block of code into a mixin. For example we code add the 
+css code to the html selector as such to apply the media queries.
+
+@include respond-phone { font-size:50%} and the stuff in the brackets will be passed into the mixin.
+
+But we can do even better. Because we need to make for different breakpoints it makes sense to have a manager.
+
+The difference between this method and the previous is that we are going to pass in an arguement
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone {
+		@media (max-width: 600px) { @content }; 
+
+	@if $breakpoint == tab-port {
+		@media (max-width: 900px) { @content };
+	}
+
+	@if $breakpoint == tab-land {
+		@media (max-width: 1200px) { @content };
+	}
+
+	@if $breakpoint == big-desktop {
+		@media (min-width: 1800px) { @content };
+	}	
+
+}
+
+To apply this we would apply the css as follows
+
+@include respond(tab-land) {
+		font-size: 56.25%; 
+}
+
+the name is in the brackets will tell the mixin which line to run.
+
+Now we come to the use of pixels. We cannot use pixel to set the breakpoints because if the user changes the default
+font size it will not work correctly (need more clarification). I think because if the font-size changes we want the
+media queries to active accordingly. If not the breakpoints will not respond properly.
+IMPORTANT in media queries the rem of em is always going to come from the browser. We will use ems because rems 
+sometimes fail to work as intended on browsers. 
+
+After changing to ems it will look like this. The calculation is shown
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone {
+		@media (max-width: 37.5em) { @content }; //600px = 37.5*16
+	}
+
+	@if $breakpoint == tab-port {
+		@media (max-width: 56.25em) { @content }; //900px
+	}
+
+	@if $breakpoint == tab-land {
+		@media (max-width: 75em) { @content };
+	}
+
+	@if $breakpoint == big-desktop {
+		@media (min-width: 112.5em) { @content };
+	}
+}
+
+Now if we are working with smaller screen it makes sense that we want to work with small fonts. That means that 
+our REM in the HTML selector must scale aswell. Hence it will look like this.
+html {
+	/*now one rem is exactly equal to 10 pixels*/
+	font-size: 62.5%; //1 rem = 10px ; 10px/16ox = 62.5%
+	scroll-behavior: smooth;
+
+	@include respond(tab-land) {
+		// width < 1200px?
+		font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
+	}
+
+	@include respond(tab-port) {
+		// width < 900px?
+		font-size: 50%; //1 rem = 8px, 8/16 = 50%
+	}
+
+	@include respond(big-desktop) {
+		font-size: 75%; //1 rem = 12px, 12/16 = 75%
+	}
+}
+Note that we have arranged them from largest to smallest media query because the last media query will be applied. We 
+want the smaller media query to applied last.
+Note that we used min-width for the large screen because we want everything larger than this to apply after this breakpoint.
+
+
