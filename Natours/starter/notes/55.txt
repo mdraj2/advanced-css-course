@@ -1,0 +1,50 @@
+When we start writing Css we start with the large screen and then we use media queries to shrink design for smaller screen.
+We use media queries to stest for max width.
+
+For mobile first we write CSS for mobile screens and then write media queries for min-width.
+
+Lets take the max-witdh. This means that the CSS will apply aslong as the max-width is below the specified size.
+
+If you had a view port size that is inbetween the two max-witdh then both media queries will apply.
+
+Note that if you have conflicting CSS in the two media queries then the one that appears the last will take precedence
+Media queries have any specificity. 
+
+In min-width it is the opposite. Basically, the media-query will begin to apply after say 600px.
+
+what is the pros and cons for mobile first.
+The website is optimised for website design and reduces the website to the absolute essentials
+results in smaller,faster and more efficient products
+prioritizes content over aesthetic design, which may be desirable
+
+But the disadvatange is that the desktop version may feel overly empty and simplictic. 
+More difficult and counterintuitive to develop
+Less creative freedom, making it more diffucult to creatre distinctive products
+clients are used to see a desktop version of the site as a prototype
+do your users even use the mobile internet? Whats in the purpose of your website
+
+But whatever method your choose mobile first or desktop first you need to keep in mind. You must design for both
+
+What is the best way of choosing the breakpoints?
+According to the instructur there are 3 ways. The bad the good and the perfect. 
+
+The bad way is to set the breakpoint
+using apple products. This is because you are optimising for one product and it is not future proof. 
+
+The good way is to check for most used witdh for specfic devices and try to group them and set the breakpoints
+
+The perfect way is to check when the design breaks and then apply breakpoints and then fix them.
+
+We will use the good way because the perfect way is too time consuming. We use the stat counter to find the most 
+common breakpoints. 
+
+600px for phones only,
+600px - 900px for tablet portrait,
+900px - 1200px for tablet landscape,
+1200px-1800px for desktop,
+1800px and above for big desktop
+
+
+
+
+
