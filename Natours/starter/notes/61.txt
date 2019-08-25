@@ -1,0 +1,17 @@
+What is the difference between. What is the difference of images in html and css? In html that means all the 
+images in img tags. In css however, the images in css are when we use background images.
+
+We will start with density switching. We will serve high resolution images for bigger screens and the opposite for 
+low resolution screens
+
+You can tell the browser to select the optimum image using the srcset attribute on img tags. This is different from the 
+normal src attibute. The url followed by 1x , url 2x will tell the browser to choose the optimmum images. If the 
+screen is low density then the 1x will be choosen,otherwise the 2x will be choosen.
+
+Art direction is using a different images for different screen widths.For art direction we use the picture html tag.  
+Inside the picture element we will have a source and img element. We need atleast one image or zero or more sources.
+We copy the previous image tag and put it in the picture element. The source element will have a media tag. In the media
+tag we can we a media query. We put max-width: 37.5em in the media attribute. This means the source tag will apply
+when the max-width is smaller than 37.5em. In the source element with the the srcset and set the img locations
+using 1x and 2x.
+ 
