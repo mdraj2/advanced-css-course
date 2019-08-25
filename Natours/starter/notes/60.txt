@@ -1,0 +1,11 @@
+The goal of responsive images is to serve the right image to the right screen size and device so that you dont download the
+very large images in smaller screen.
+
+There are 3 cases to use responsive images. That is large 
+Resolution switching is decrecing the resolution of the image that is served on smaller screen so that you
+dont consume too much data.
+
+The next is desity switching. In this case the on 1x screen for example we dont need to use 2pixels to show 1 piece of 
+infomation.
+
+Art direction is different image on a smaller screen
