@@ -1,0 +1,57 @@
+we will reduce the spacing between the footer logo and the text using media quries.
+
+@include respond(tab-port) {
+	margin-bottom: 4rem
+	
+}
+
+Now the layout,base and typography is taken care of we begin making the About and Features Section. We will go to the
+_home.scss page to fix the padding between the sections as there is too much when we shrink to mobile size. 
+
+We add
+
+@include respond(tab-port) {
+		padding: 20rem 0;
+	}
+
+to the section-about 
+
+and for the .section-features we add
+
+@include respond(tab-port) {
+		padding: 15rem 0;
+	}
+
+and for the .section-tours we add
+
+@include respond(tab-port) {
+		padding: 20rem 0 10rem 0;
+	}
+
+and for the .section-stories we add
+
+@include respond(tab-port) {
+		padding: 10rem 0;
+	}
+and for the .section-book we add
+
+@include respond(tab-port) {
+		padding: 10rem 0;
+	}
+
+We will also start adding media queries to utilties classes aswell. Look at utility class. We need to adjust the 
+utility class because there is so much space inbetween.
+
+Next we want to fix the composition and the feature box. The composition is 3 photos. We want to remove the position absolute
+to postion relative and then float them to the left. We then make the width smaller (33.333% of the parent width) . This
+is so that all the 3 photos will be in one line and we make the shadow less pronounced. These media queries are applied
+to the __photo class. For the individual photos we add media queries to change the z-index and the position.
+
+Next the feature box. We want to make the icon smaller and the padding smaller. We add the media queries. respectively
+
+@include respond(tab-port) {
+			margin-bottom: 0;
+		}
+@include respond(tab-port) {
+		padding: 2rem;
+	}

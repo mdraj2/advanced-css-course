@@ -1,0 +1,33 @@
+We want to remove the hover on the tours card on mobile screen because hover does not work on mobile screen. We dont want
+the value to sit on the back of the card. So we must bring it to the front.
+
+We open up the card.scss file and modify it with media queries. In this section we will have a very big media quries
+because we will basically have a big rewrite of the section. We copy the content in this file in the big media query and
+refactor it.
+
+In the media query the perspective and the position does not have to be changed. We will now change the height to auto
+why? Because we want the back side and the front side to have the same size but that is not required in this case.
+So we overwrite it and set it to auto. We change the side css selector from position absolute to relative.
+
+The front part does not need any changing.
+We remove most of the back part and change the rotateY to 0.
+
+Alot of refactoring was done. It is important to note that 
+if a div is empty it is likely that the inner content is set to position absolute.
+
+The cards were fixed. The next section is the story section.
+
+Now complete the home section.
+
+Now complete the books section in the home.scss file
+
+Note that background image 100% make the image go from the x = 0 to x = 100%.
+
+You should try to fix the book now section by yourself.
+
+
+
+
+
+
+

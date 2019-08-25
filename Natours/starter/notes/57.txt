@@ -1,0 +1,18 @@
+For desktop first we start with the largest media queries for the largest to the smallest.
+
+The order of doing the media queries are Base + typography > general layout +grid > page layout > components
+
+We font need to do alot of change because that will be taken care with the font size in the HTML element.
+
+We need to apply media queries so to the typography. The design breaks at around 600px or at small screen size.
+We will also want to remove the white border on small screen sizes. 
+
+We add media query in the base scss file of the body and add a media query for padding 0 at tab port size.
+
+For typography we go to the --main and change the letter-spacing and the font-size to 1 rem and 5 rem respectively
+for the phone size. The typography was not scaling properly for the smaller screen. For the sub heading we reduce the 
+letter spacing to 0.5 using a media queries targetted for the phones.
+
+Now we are going to fix up the grid section. In mobile we want to transform all the rows into columns when we make
+the screen small.
+
