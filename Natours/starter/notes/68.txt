@@ -1,0 +1,18 @@
+Flexbox introduction
+
+Flexbox allows us to align elements to one another in different diections and orders.
+
+Flexbox allows us to give the container the ability to expand and shrink elements to bests use all the available space
+
+Flexbox reaplce the float layout and using lessa nd more readable and logical code
+
+Flexbox completely changes the way that we build one dimensional layouts.
+
+The element that we use flex on is called the flex container. To make a flex container we set the property to display
+flex. If you use flex-line then it will be a flexbox that behavours like a inline element. The items inside the flex
+container is called the flex items. There are two axis the main axis and the cross axis.
+
+There are alot of properties for the flex container and the flex items.
+
+
+

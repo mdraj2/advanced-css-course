@@ -1,0 +1,78 @@
+In the header we have three important parts. The logo on the left handside, the search bar and the button icon, and finally
+the navigation bar on the right handside.
+
+The logo is made using the following well known html 
+<img src="img/logo.png" alt="trillo logo" class="logo">
+
+Now for the search bar we use the following html. We know that it needs to be a form tag with an input tag. The form
+will be submiteed but for now we put no action.
+
+<form action="#" class="search">
+    				<input type="text" class="search__input" placeholder="Search hotels">
+    				<button class="search__button">
+    					<svg class="search__icon">
+    						<use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+    					</svg>
+    				</button>
+    			</form>
+
+We use SVG because sometimes text icons may fail to load sometimes and it will look like a black box. There
+is also another issue with screen reader.
+
+We go to icomoon and get the svgs that we want. Note that we untick png because we dont want that. From all the files
+we need the spritefile and the SVG folder. This file contains all the 10svg that I clicked and downloaded.
+This is better because we only need to make one http request. 
+We put the sprite file and the svg folder in the imgs folder.
+
+To use the svg. You need a svg tag with a inner element of use and a attribute of xlink:href="img/sprite.svg#nameofsvg"
+to use the svg. You can get the name of the svg from the demo file.
+
+This is the best way to use a svg becauses this way we can change the color of the svg using css.
+
+But you will only be able to see this on a webserver. note that it is easier to position items withsvg than text.
+
+now you make the nav element on the right handside. inside the nav element we will have 3 divs. Two of them will be
+icons and the other will be a picture of the user. The icons will use svg and a span to bring attention to the pending
+number of stuff to alert.
+
+    			<nav class="user-nav">
+    				<div class="user-nav__icon-box">
+    					<svg class="user-nav__icon">
+    						<use xlink:href="img/sprite.svg#icon-bookmark"></use>
+    					</svg>
+    					<span class="user-nav__notification">7</span>
+    				</div>
+
+    				<div class="user-nav__icon-box">
+    					<svg class="user-nav__icon">
+    						<use xlink:href="img/sprite.svg#icon-chat"></use>
+    					</svg>
+    					<span class="user-nav__notification">13</span>
+    				</div>
+
+    				<div class="user-nav__user">
+    					<img src="img/user.jpg" alt="User photo" class="user-nav__user-photo">
+    					<span class="user-nav__user-name">Jonas</span>
+    				</div>
+    			</nav>
+
+We need to style the svg. Inorder to do that we will use the compoents scss partial file to it happen. But know that
+this is not the best way to do this. It may be better to have a better way of arranging this, maybe a different file.
+
+to size a svg you just set the height and the witdh. For example the search will be 
+
+.search {
+	&__input {
+
+	}
+
+	&__button {
+
+	}
+
+	&__icon {
+		height: 2rem;
+		width: 2rem;
+	}
+
+}

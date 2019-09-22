@@ -1,0 +1,19 @@
+To use flexbox set the display property to flex. This will cause the flex items to which are the children elements on the
+container class to side by side. 
+
+Note that this property was applied on the parent. We can only apply more flexbox properties on the parent. 
+The flex-direction: row-reverse will cause the flex items to start from the right. The main axis is now position from
+right to left. There is column which is the main axis going from top to bottom. The reverse is from bottom to top.
+
+justify-content: center applied on the parent element will center all the children elements. justify-content: space-between
+will cause the space between elements to have the same spacing (note that it is responsive and will adjust as you make
+the window smaller).justify-content: space-around make the space around the element the same. justify-content: space-evenly
+make the space evenly along the row. 
+
+align-items defines how the flex items are positioned in the cross axis. Inititally, the align-items is stretch, that means
+that if there is a bigger element then all the items will have strech to ocupy the same height. if you set to center
+then all the items will be centered around the biggest element as the center axis. If you set to flex start then all the
+flex items will be positioned at the start. If you use baseline then it will be align on words. That is image the line
+that is below all the words.
+
+Note that the main and cross axis switch when we changet he flex-direction.

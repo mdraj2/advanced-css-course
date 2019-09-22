@@ -1,0 +1,31 @@
+The trillo app. 
+
+How does the app look like? Well there is a pink background (which is the body element). 
+And in the center we have a container that is centered on the viewport. 
+We next have a header on the top of the container. Next we have a black side bar and on the right 
+we have a hotel overview. 
+
+We will start with the overall container. We make a div with a class of container. The container will host the 
+header and the content. The header will be the top white strip. The container will have two children. The
+first child will be the side bar. We give the side bar a navigation tag. This is because it is a navigation. The other is 
+the main content, so we give a html tag of main.
+
+We now go to the layout.scss file to fix the layout. Notice how we came to the layout scss. We identified the 
+major sections. 
+
+We start with the container. We make it such that it occupies 120rem as the maximum witdh. We center it with 8rem auto for
+margin property. and we give it a background color of grey. Next we add a box shadow. Note that we added a min-height of 
+50rem. This is for testing purposes otherwise it look weird. We also defined the box shadow in the css properties.
+
+We gave the header a height of 7rem and gave it some color. I think the border bottom is not correct however.
+
+
+Now we want to put flexbox in action. We put display of flex on the content class. The navigation should have a witdh
+so we need to use the flex basis property on the sidebar class.
+
+	flex: 0 0 18%;
+
+means no grow or shrink but the witdh of the element is 18% of the parent. However, the hotel view is not optimised. 
+That is it should occupy the remaining. so it must grow. Simply we say 
+	flex: 1 
+on the hotel view class.

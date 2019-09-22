@@ -1,0 +1,5 @@
+What if you had a lot of flex items? If nothing is done then all the items will be cramed in a single row.and sometimes
+it will overflow. But we add the property flex-wrap for new lines on the main container then it will no longer overflow
+instead the excess will enter a new row.
+
+Align content align entire rows.

@@ -1,0 +1,32 @@
+I made 3 scss files. The 3 partial scss files which are base.scss, components.scss, layout.scss. They will be compiled to the 
+main scss file. 
+
+The base file will contain the variables, and the reset. We set the html to have a box-sizing of border box. And then
+we set all the elements and the pseudoelements to border-box. The reason we set inherit is because some elements may not
+have inbuilt inherit border-box and so it will not work as intended, which is why we do it this way. We set the 
+font-size to 62.5% as the global font size. This font size is the root font size which will determine how much 1rem will
+be. From the browser the font size is 16, and 62.5 is 10px. So 1 rem will be equal to 10px now. If we change the font size
+in the browser it will scale accordingly if we use percentages. However, if we set the root font size in the html it will
+not scale accordingly.
+
+The body element will contain the font-family. It is not required to put in the html tag. We will use the open
+sans but if it is not available then use the sans-serif.
+
+We we discuss about css variables. What is the difference between this can sass variables?? The first advantage is that
+you wont need a preprocessor(that is we wont need a seperate file). The other reason is that they can be manipulated in
+javascript and the dev tools. We can use them in the calc function and they cascade and they are inherited. 
+
+Now to use the properties. Inorder to use these custom properties we need to define them in a scope. But we need to be 
+careful where we put them. The css properties will be present in that block and its children. So we need one central place
+where they will be collected. And that place is the root pseudoclass. By placing it in the :root {} class they will be
+avaialble throughout our whole document. The root psedo selector has a higher spec than the html element. 
+
+The notation of css variables are 
+--name-something: somethinesle
+
+to use the variable we use the var() keyword and input the css custom property.
+
+For now we will put min-height of 100vh so that we see the red background.
+
+The main file will contain import statements like so @import "base";
+

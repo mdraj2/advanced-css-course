@@ -1,0 +1,38 @@
+intro to flexbox. 
+
+It is a new module in CSS3 that makes it easy to align elements to one another in different directions and orders
+
+The main idea behind flexbox is to give the container the ablility to expand and shrink elements to best use all the 
+available space.
+
+Flexbox is good for one dimensional layouts. x or y.
+
+To use flex you need to set the div to display of flex. This will make a flex container. The stuff inside the flex
+container is called the flex items. The length along the line that the flex items are aligned is called the main axis.
+The perpendicular axis is called the cross axis.
+
+The properties on the flex container.
+------------------
+flex-direction: row| row-reverse| column| column-reverse (the direction of the flex container)
+flex-wrap: nowrap| wrap| wrap-reverse (tells you if it wraps if there is not enough space)
+justify-content: flex-start| flex-end| center| space-between| space-around| space-evenly ( tell you how the flex items will
+be aligned along the main axis)
+align-items: stretch| flex-start| flex-end| center| baseline (this tells how the flex items will be align in the 
+cross axis)
+align-content: stretch| flex-start| flex-end| center| baseline| space-between| space-around ( tell how the rows are aligned
+in the cross axis if there is some space
+
+The properties on the flex items.
+------------------
+align-self: auto| stretch| flex-start| flex-end| center| baseline (tells how the indivual item will align)
+order: 0 |<integer> (tell you how the items should appear)
+flex-grow: 0 (tells you how much an item can grow)
+flex-shrink: 0 (tells you how much it can shrink)
+flex-basis: auto (tells you the base width of the flex item).
+The three properties can be defined as flex: 0 1 auto for example where 0 is flex-grow,flex-shrink and flex-basis respectively
+
+
+
+
+
+

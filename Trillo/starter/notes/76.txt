@@ -1,0 +1,28 @@
+We want the images and the svgs in the header tag to be align horizontally. So our flex container must be header element.
+The flex items are going to be the direct children under the header which are logo, search, user-nav. We give some color
+to the seach and user-nav of background color of red and green. Finally we use the justify-content: space-between to 
+spread the flex items on the main-axis. We also use the align-items center to center the items on the cross-axis.
+Next we just fix the individual elments by fixing up the margins.
+
+For the search bar we put a propety of flex because it is one item. We set the flex: 0 0 40%. Which basically tells that
+it should not shrink, grow but be 40% of the parent element.
+
+Note that the input form need to have a property of inherit for font family and size because that is not the default. We
+added a pseudoclass for the focus element. We also make the search bar 90% of the parent element and make it larger when
+we focus on it. 
+
+We put a margin of -3.5rem on the search button because it is a quick and easy way to make the image move when we click.
+
+Now we want to center it. So we need to make the search class become a flex container. We make the align-items and justify
+-content to center as both. 
+
+We use the following code to change the background color of the button when we focus on the search bar. The ajacent selector
+is required.
+
+&__input:focus + &__button {
+		background-color: var(--color-grey-light-3);
+	}
+
+We change the color of the SVG using the fill property and we give a dark color.
+
+We change the color of the placeholder and use the website. 

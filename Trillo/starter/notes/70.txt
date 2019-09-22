@@ -1,0 +1,11 @@
+Now we will look at the flex-items. If you want to align a specific element on the cross axis you use align-self 
+on that element. That is align self is defined on the flex item class. 
+
+If you want to play around with the order you specify the order. The default order on flex items is 0. 
+If you set flex-grow they will grow to ocuppy as much space as they can while the other properties are true. Flex grow
+is a relative value. flex-basis is the witdh and it % based on the witdh of the container. 
+
+All items shrink when we make the browser smaller. If you dont want it to shrink you set the flex-shrink to 0 on that
+class item.
+
+
