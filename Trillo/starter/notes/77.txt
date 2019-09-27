@@ -1,0 +1,62 @@
+We make the green notification area (the user naivigation) into a flex container. There are three levels of flex containers
+in this example.
+
+We add display flex to the user navigation (.user-nav). Next we align the items on the center of the cross axis. so align-items
+is set to center. We we want to add some padding between the elements. We use the & > * {} and add padding of 0 2rem
+and make the cursor to pointer. 
+
+Why dont we add the spacing for the flex items?? For example something like 
+justify-content: space-between;
+	width: 20%;
+
+will add the spacing required but it will be just that. It is not possible to "enter" the space inbetween. This makes it
+hard for to make the grey background possible.
+
+Also note that width: 50%; or anything of sort can be overwritten if the padding and the content is larger than the specified
+amount of width.
+
+Now for align-self: stretch; This is the most important bit of this tutorial. The flex container is the .header. The 
+flex items of this container which is the .user-nav can be fixed using the align-self. We wanted all the flex-items 
+to be centered except the .usernav. This will make .usernav element extend all the way in height to the header when 
+align-self: stretch is used
+
+Now to make the inner (shadow container) to have the same height as the header you can * > {} and inset height: 100%
+or align-self stretch to do the trick.
+
+Now to center the items we go to the  * > {} and add
+height: 100%;
+		display: flex;
+		align-items: center;
+
+to make the items to the center. This will center the SVG and the notification as well.
+
+We use the following scss to change the color and the height and width
+
+&__icon {
+		height: 2.25rem;
+		width: 2.25rem;
+		fill: var(--color-grey-dark-2);
+	}
+
+Now to align the notifation text we again use a flex container
+
+&__notification{
+		font-size: .8rem;
+		height: 1.75rem;
+		width: 1.75rem;
+		border-radius: 50%;
+		background-color: var(--color-primary);
+		color: #FFF;
+		position: absolute;
+		top: 1.5rem;
+		right: 1.1rem;
+		// text-align: center;
+		// padding-top: 0.2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+This will center the text in the container with class notification. 
+
+
